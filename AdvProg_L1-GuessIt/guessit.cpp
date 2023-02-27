@@ -21,7 +21,7 @@ using namespace std;
 ***/
 int generateRandomNumber() {
     // TODO: Return the random number in range 1 to 100
-    return rand() % 100 + 1;
+    return (rand() % 100) + 1;
 }
 
 
@@ -75,10 +75,11 @@ string getAnswer(int number, int randomNumber) {
 ***/
 bool checkSuccess(string answer) {
     // TODO: return the result after checking that player guessed right or wrong
+    bool result = false ;
     if (answer == "Congratulations! You win.") {
-        return true;
+        result = true;
     }
-    return false;
+    return result;
 }
 
 
