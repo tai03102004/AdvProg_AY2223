@@ -21,8 +21,7 @@ using namespace std;
 ***/
 int generateRandomNumber() {
     // TODO: Return the random number in range 1 to 100
-    int ans = rand()%100 +1;
-    return ans;
+    return rand()%100 +1;
 }
 
 
@@ -55,17 +54,16 @@ string getAnswer(int number, int randomNumber) {
               If number is equal randomNumber, the answer is "Congratulation! You win."
     ***/
     string answer;
-    
-    if (number > randomNumber) {
-        answer = "Your number is higher.";
-    }
-    else if (number < randomNumber) {
-        answer = "Your number is lower.";
-    }
-    else {
-        answer = "Congratulations! You win.";
-    }
-    return answer;
+   if(number>randomNumber) {
+       answer="Your number is higher.";
+   }
+   if(number<randomNumber) {
+       answer="Your number is lower.";
+   }
+   if(number==randomNumber) {
+       answer="Congratulation! You win.";
+   }
+   return answer;
 }
 
 
@@ -77,8 +75,9 @@ string getAnswer(int number, int randomNumber) {
 ***/
 bool checkSuccess(string answer) {
     // TODO: return the result after checking that player guessed right or wrong
-    if( answer == "Congratulation! You win." ) return true;
-    return false;
+    if(answer=="Congratulation! You win.")
+    return true;
+    else return false;
 }
 
 
@@ -91,9 +90,8 @@ bool checkSuccess(string answer) {
 bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
-
     if(isContinued=='y'||isContinued=='Y') {
-      result = true;
+        result = true;
     }
     return result;
 }
@@ -117,14 +115,13 @@ void playGuessIt() {
     int randomNumber = generateRandomNumber();
     int number;
     string answer;
-
+    
     do {
         number = getPlayerGuess();
         answer = getAnswer(number, randomNumber);
         cout << answer << endl;
     } while (!checkSuccess(answer));
 }
-
 int run() {
     srand(time(0));
     char isContinued;
