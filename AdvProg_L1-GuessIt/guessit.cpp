@@ -21,7 +21,7 @@ using namespace std;
 ***/
 int generateRandomNumber() {
     // TODO: Return the random number in range 1 to 100
-    int ans = rand() %100;
+    int ans = rand()%100 +1;
     return ans;
 }
 
@@ -91,7 +91,9 @@ bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
 
-    if( isContinued == 'y' ) result = true;
+    if(isContinued=='y'||isContinued=='Y') {
+      result = true;
+    }
     return result;
 }
 
@@ -105,8 +107,7 @@ bool checkContinuePlaying(char isContinued) {
 char getPlayerOpinion() {
     // TODO: Ask the player about continue playing and return the player's choice
     char isContinued;
-    cout << "Do you want play again ? ( y or n )";
-    cin >> isContinued;
+    cin>>isContinued;
     return isContinued;
 }
 
