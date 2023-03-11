@@ -21,7 +21,8 @@ using namespace std;
 ***/
 int generateRandomNumber() {
     // TODO: Return the random number in range 1 to 100
-    return (rand() % 100) + 1;
+    int ans = rand() %100;
+    return ans;
 }
 
 
@@ -75,7 +76,8 @@ string getAnswer(int number, int randomNumber) {
 ***/
 bool checkSuccess(string answer) {
     // TODO: return the result after checking that player guessed right or wrong
-    return answer == "Congratulations! You win.";
+    if( answer == "Congratulation! You win." ) return true;
+    return false;
 }
 
 
@@ -88,9 +90,8 @@ bool checkSuccess(string answer) {
 bool checkContinuePlaying(char isContinued) {
     // TODO: return result after checking player continue playing or not
     bool result = false;
-    if (isContinued == 'Y' || isContinued == 'y') {
-        result = true;
-    }
+
+    if( isContinued == 'y' ) result = true;
     return result;
 }
 
@@ -104,7 +105,7 @@ bool checkContinuePlaying(char isContinued) {
 char getPlayerOpinion() {
     // TODO: Ask the player about continue playing and return the player's choice
     char isContinued;
-    cout << "Do you want to play again? (Y/N): ";
+    cout << "Do you want play again ? ( y or n )";
     cin >> isContinued;
     return isContinued;
 }
