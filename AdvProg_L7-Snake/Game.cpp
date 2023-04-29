@@ -136,7 +136,6 @@ void Game::nextStep()
 {
     while (!inputQueue.empty()) {
         // get the input direction from input queue
-        Direction next ; // YOUR CODE HERE
         Direction next = inputQueue.front(); // YOUR CODE HERE
 
         // remove the front of input queue
